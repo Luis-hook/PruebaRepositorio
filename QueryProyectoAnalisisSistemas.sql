@@ -99,7 +99,7 @@ GO
 
 CREATE OR ALTER PROC Agregar_Modificar_Producto
 	@ProductoID INT,
-	@Nombre NVARCHAR(25),
+	@Nombre NVARCHAR(50),
 	@Descripcion NVARCHAR(100),
 	@Precio MONEY,
 	@Fotografia VARBINARY(MAX),
