@@ -27,14 +27,14 @@ GO
 IF NOT EXISTS (SELECT name FROM sys.filegroups WHERE is_default=1 AND name = N'FG_Data') ALTER DATABASE [ProyectoAnalisisSistemas2021] MODIFY FILEGROUP [FG_Data] DEFAULT
 GO
 
---CREATE TABLE CategoriaProducto
---(
---	CategoriaID INT NOT NULL IDENTITY(1,1),
---	NombreCategoria NVARCHAR(50) NOT NULL,
---	Descripcion NVARCHAR(70) NOT NULL
---	CONSTRAINT PK_CategoriaProducto PRIMARY KEY(CategoriaID)
---);
---GO
+CREATE TABLE CategoriaProducto
+(
+	CategoriaID INT NOT NULL IDENTITY(1,1),
+	NombreCategoria NVARCHAR(50) NOT NULL,
+	Descripcion NVARCHAR(70) NOT NULL
+	CONSTRAINT PK_CategoriaProducto PRIMARY KEY(CategoriaID)
+);
+GO
 
 CREATE TABLE Producto
 (
@@ -48,17 +48,22 @@ CREATE TABLE Producto
   --CategoriaProductoID INT NOT NULL
   
   CONSTRAINT PK_Producto PRIMARY KEY(ProductoID)
-  --CONSTRAINT FK_Producto_CategoriaProducto FOREIGN KEY(CategoriaProductoID)
-  --REFERENCES CategoriaProducto(CategoriaProductoID)
+  
 ) ON FG_Data;
 GO
 
+CREATE TABLE MecanismoContacto
+(
+MecanismoContactoID INT NOT NULL IDENTITY(1,1),
+NumeroTelefono NVARCHAR(100) NOT NULL,
+CorreoElectronico NVARCHAR(100) NOT NULL
 
+)
 
 CREATE TABLE Cliente
 (
   ClienteID		BIGINT		NOT NULL IDENTITY (1,1),
-  CorreoElectronico		NVARCHAR(50)	NOT NULL,
+  CorreoElectronico		NVARCHAR(100)	NOT NULL,
   NombreCompleto	NVARCHAR(50)	NOT NULL,
   DireccionFisica NVARCHAR(100)	NOT NULL,
   Contrasenna	NVARCHAR(25)	NOT NULL,
@@ -72,7 +77,7 @@ GO
 CREATE TABLE Administrador
 (
   AdministradorID	INT		NOT NULL IDENTITY (1,1),
-  CorreoElectronico		NVARCHAR(50)	NOT NULL,
+  CorreoElectronico		NVARCHAR(100)	NOT NULL,
   Contrasenna	NVARCHAR(25)	NOT NULL,
   
 
