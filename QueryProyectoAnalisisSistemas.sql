@@ -48,12 +48,17 @@ CREATE TABLE Producto
   --CategoriaProductoID INT NOT NULL
   
   CONSTRAINT PK_Producto PRIMARY KEY(ProductoID)
-  --CONSTRAINT FK_Producto_CategoriaProducto FOREIGN KEY(CategoriaProductoID)
-  --REFERENCES CategoriaProducto(CategoriaProductoID)
+  
 ) ON FG_Data;
 GO
 
+CREATE TABLE MecanismoContacto
+(
+MecanismoContactoID INT NOT NULL IDENTITY(1,1),
+NumeroTelefono NVARCHAR(100) NOT NULL,
+CorreoElectronico NVARCHAR(100) NOT NULL
 
+)
 
 CREATE TABLE Cliente
 (
