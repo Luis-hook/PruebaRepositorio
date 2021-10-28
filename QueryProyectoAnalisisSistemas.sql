@@ -27,14 +27,14 @@ GO
 IF NOT EXISTS (SELECT name FROM sys.filegroups WHERE is_default=1 AND name = N'FG_Data') ALTER DATABASE [ProyectoAnalisisSistemas2021] MODIFY FILEGROUP [FG_Data] DEFAULT
 GO
 
---CREATE TABLE CategoriaProducto
---(
---	CategoriaID INT NOT NULL IDENTITY(1,1),
---	NombreCategoria NVARCHAR(50) NOT NULL,
---	Descripcion NVARCHAR(70) NOT NULL
---	CONSTRAINT PK_CategoriaProducto PRIMARY KEY(CategoriaID)
---);
---GO
+CREATE TABLE CategoriaProducto
+(
+	CategoriaID INT NOT NULL IDENTITY(1,1),
+	NombreCategoria NVARCHAR(50) NOT NULL,
+	Descripcion NVARCHAR(70) NOT NULL
+	CONSTRAINT PK_CategoriaProducto PRIMARY KEY(CategoriaID)
+);
+GO
 
 CREATE TABLE Producto
 (
