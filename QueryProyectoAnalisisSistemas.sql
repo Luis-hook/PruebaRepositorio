@@ -58,7 +58,7 @@ GO
 CREATE TABLE Cliente
 (
   ClienteID		BIGINT		NOT NULL IDENTITY (1,1),
-  CorreoElectronico		NVARCHAR(50)	NOT NULL,
+  CorreoElectronico		NVARCHAR(100)	NOT NULL,
   NombreCompleto	NVARCHAR(50)	NOT NULL,
   DireccionFisica NVARCHAR(100)	NOT NULL,
   Contrasenna	NVARCHAR(25)	NOT NULL,
